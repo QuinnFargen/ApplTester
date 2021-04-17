@@ -1,39 +1,34 @@
 #############################################
 # Testing & Submitting Apps
-# Website           # https://totalcardvisa.com/
-# Chrome Driver     # C:\Program Files (x86)
 
-# Other Py Files
-from TotalVisaPages import T01_TestApp
-from SampleData import SampleInserts
-from Storage import setdirectory, maketempfolder, renametempfolder
-# Python
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-import os
+# Import funcs
+from Drivers import get_driver
+from TotalVisa import TotalApp
+# from FirstPremier import FirstPremApp
 
-# Set Directory
-Path = setdirectory()
-
-# Start Tester
-driverpath = 'C:\\Users\\Quinn\\Desktop\\AppTester\\drivers\\chromedriver.exe'
-driver = webdriver.Chrome(driverpath)
+########################################
+# TotalVisa:
 weburl = 'https://totalcardvisa.com/'
-driver.get(weburl)
+headless = True
+driver = get_driver(weburl,headless)
 
-# Get Data to insert
-inserts = SampleInserts()
+# Total Visa Test App:
+TotalApp(driver)
 
-# Make temp folder
-tempfolder = maketempfolder(Path)
-os.chdir(tempfolder)
+# Close Tab: #  driver.close()
+# Close Quit
+driver.quit()
 
-# Test App, get AppID
-AppID = T01_TestApp(driver, inserts, Path)
 
-# Rename Folder
-newfolder = renametempfolder(Path, AppID)
+########################################
+# First Premier:
+weburl = 'https://www.premiercardoffer.net/'
+headless = False
+driver = get_driver(weburl,headless)
 
-# Close Tab: #driver.close()
+# First Premier Test App:
+FirstPremApp(driver)
+
+# Close Tab: #  driver.close()
 # Close Quit
 driver.quit()
