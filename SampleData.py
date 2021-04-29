@@ -1,6 +1,6 @@
 
 def SampleInserts():
-    # Example Insert
+       # Example Insert
        TotalVisa = {"first_name": "Quinn",    # 0
               "last_name": "Testing",  # 1
               "email_address": "test@test.com",  # 2
@@ -15,8 +15,8 @@ def SampleInserts():
               "dob_mm": "04",  # 11
               "dob_dd": "02",  # 12
               "dob_yyyy": "1996",  # 13
-              "ssn": "666666666",  # 14
-              "verify_ssn": "666666666",  # 15
+              "ssn": "666557777",  # 14
+              "verify_ssn": "666557777",  # 15
               "occupation": "Retired",  # 16
               "monthly_income_amount": "123",  # 17
               "monthly_obligation_amount": "321",  # 18
@@ -38,8 +38,8 @@ def SampleInserts():
               "dob_mm": "04",  # 11
               "dob_dd": "02",  # 12
               "dob_yyyy": "1996",  # 13
-              "ssn": "666666666",  # 14
-              "verify_ssn": "666666666",  # 15
+              "ssn": "666557777",  # 14
+              "verify_ssn": "666557777",  # 15
               "occupation": "Retired",  # 16
               "monthly_income_amount": "123",  # 17
               "monthly_obligation_amount": "321",  # 18
@@ -51,4 +51,5 @@ def SampleInserts():
        inserts = {"TotalVisa" : TotalVisa,
               "FstPrem" : FstPrem
               }
-    return inserts
+       return inserts
+

@@ -38,7 +38,9 @@ def Premier_Page2(driver):
     driver.find_element_by_id("homePhone").send_keys(inserts["FstPrem"]["home_phone"])
     driver.find_element_by_id("cellPhone").send_keys(inserts["FstPrem"]["mobile_phone"])
     # Checks & Savin
-    driver.find_element_by_id("ckChecking").click()
+    element = driver.find_element_by_id("ckChecking")
+    driver.execute_script("arguments[0].click();", element)
+    # driver.find_element_by_id("ckChecking").click()
     # driver.find_element_by_id("ckCheckinSavings").click()
     # driver.find_element_by_id("ckNeither").click()
     # Age
@@ -62,11 +64,17 @@ def Premier_Page2(driver):
     # TakePic
     TakeScreenShot(driver, 'Pg2_End')
     # Submit
-    driver.find_element_by_id("SubmitButton").click()
+    element = driver.find_element_by_id("SubmitButton")
+    driver.execute_script("arguments[0].click();", element)
+    # driver.find_element_by_id("SubmitButton").click()
     # driver.find_element_by_xpath("/html/body/form/").click()
     
     # If no Checking adct, have to continue app
     # driver.find_element_by_id("continueAppButton").click()
+
+    #Confirm addr if asked
+    driver.find_element_by_id("UseOriginalDiv").click()
+
 
 
 def Premier_Page3(driver):
@@ -89,14 +97,18 @@ def Premier_Page4(driver):
     # TakePic
     TakeScreenShot(driver, 'Pg4_Middle')
     # Elect
-    driver.find_element_by_id("btnYes").click()
+    driver.find_element_by_id("ECorrAgree").click()
     # TakePic
     TakeScreenShot(driver, 'Pg4_Late')
     # Accept
-    driver.find_element_by_id("btnAcceptEcorr").click()
+    driver.find_element_by_id("AgreeButton").click()
     # TakePic
     TakeScreenShot(driver, 'Pg4_End')
-
+    # AppID
+    fullmessage = driver.find_element_by_xpath("/html/body").text
+    rightmessage = fullmessage.split("Your reference number is:", 1)[1]
+    AppID = [int(i) for i in rightmessage.split() if i.isdigit()][0]
+    return AppID
 
 
 def Premier_Pages(driver, Path):

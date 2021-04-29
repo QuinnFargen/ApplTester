@@ -9,7 +9,7 @@ from TotalVisa import TotalApp
 ########################################
 # TotalVisa:
 weburl = 'https://totalcardvisa.com/'
-headless = True
+headless = False
 driver = get_driver(weburl,headless)
 
 # Total Visa Test App:
@@ -32,3 +32,10 @@ FirstPremApp(driver)
 # Close Tab: #  driver.close()
 # Close Quit
 driver.quit()
+
+
+
+elements=driver.find_elements_by_xpath("/html/body/form/div")
+id_list=[]
+for ele in elements:
+    id_list.append(ele.get_attribute("id"))

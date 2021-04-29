@@ -17,3 +17,12 @@ def get_driver(weburl, headless):
     driver = webdriver.Chrome(driverpath, chrome_options=chrome_options)
     driver.get(weburl)
     return driver
+
+
+def get_testdriver():
+    if os.name == 'posix':  #Mac
+        driverpath = '/Users/quinnfargen/Documents/GitHub/ApplTester/drivers/chromedriver_mac.exe'
+    elif os.name == 'nt':   #Win
+        driverpath = 'C:\\Users\\Quinn\\Desktop\\AppTester\\drivers\\chromedriver.exe'
+    driver = webdriver.Chrome(driverpath)
+    return driver
