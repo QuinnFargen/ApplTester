@@ -31,7 +31,6 @@ class TotalPg1(BasePage):
     def Ins_names(self):
         """Verifies that the hardcoded text "Python" appears in page title"""
         return "Total Visa" in self.driver.title
-driver.find_element_by_id("first_name")
 
     def click_go_button(self):
         """Triggers the search"""

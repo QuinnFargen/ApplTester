@@ -1,4 +1,6 @@
 
+
+
 def SampleInserts():
        # Example Insert
        TotalVisa = {"first_name": "Quinn",    # 0
@@ -18,11 +20,16 @@ def SampleInserts():
               "ssn": "666557777",  # 14
               "verify_ssn": "666557777",  # 15
               "occupation": "Retired",  # 16
+              "employer_name": "Nunya Biz",
+              "employer_phone": "5555555555",
               "monthly_income_amount": "123",  # 17
               "monthly_obligation_amount": "321",  # 18
               "has_debit_credit_card": "No",  # 19
               "cash_advance": "No",  # 20
-              "additional_card": "No"  # 21
+              "additional_card": "No",  # 21
+              "additional_card_first_name": "Quann",
+              "additional_card_middle_initial": "H",
+              "additional_card_last_name": "Testing",
               }
        FstPrem = {"first_name": "Nonsense",    # 0
               "last_name": "Testing",  # 1
